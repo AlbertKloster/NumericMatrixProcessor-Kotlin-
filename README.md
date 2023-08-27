@@ -2,7 +2,7 @@
 ## Description
 In this stage, you are going to implement the multiplication of a matrix by a constant. To do this, you need to multiply every element of the matrix by that constant. You can see the example below:
 
-$`
+```math
 C\times
 \begin{pmatrix}
 a_{1,1} & a_{1,2} && a_{1,3}
@@ -13,7 +13,7 @@ a_{2,1} & a_{2,2} && a_{2,3}
 C\timesa_{1,1} & C\timesa_{1,2} && C\timesa_{1,3}
 C\timesa_{2,1} & C\timesa_{2,2} && C\timesa_{2,3}
 \end{pmatrix}
-`$
+```
 
 ## Objectives
 Write a program that:
