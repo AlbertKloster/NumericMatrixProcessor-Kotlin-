@@ -9,12 +9,14 @@ Let’s start with matrix addition.
 For two matrices to be added, they must have an equal number of rows and columns. The sum of matrices $A$ and $B$ will be a matrix with the same number of rows and columns as $A$ or $B$. The sum of $A$ and $B$, denoted $A+B$ or $B+A$, is computed by adding the corresponding elements of $A$ and $B$: $(A+B)_{n,m}=A_{n,m}+B_{n,m}$. Notice that $n$ in the index $_{n,m}$ represents the row and $m$ represents the column.
 
 Here is a simple example with numbers:
-
-$\begin{pmatrix}
+```math
+\begin{pmatrix}
 2 & 4 & 5 & 6 \\
 6 & 6 & 7 & 8 \\
 5 & 0 & 0 & 1 \\
-8 & 8 & 2 & 9 \end{pmatrix}$
+8 & 8 & 2 & 9 \end{pmatrix}
+```
+
 
 Objectives
 In this stage, you should write a program that:
