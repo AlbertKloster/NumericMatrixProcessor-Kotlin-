@@ -6,7 +6,7 @@ Since matrices are tables of numbers, they are usually presented in code as 2D-l
 # Description
 Let’s start with matrix addition.
 
-For two matrices to be added, they must have an equal number of rows and columns. The sum of matrices $A$ and $B$ will be a matrix with the same number of rows and columns as $A$ or $B$. The sum of $A$ and $B$, denoted $A+B$ or $B+A$, is computed by adding the corresponding elements of $A$ and $B$: $(A+B)_n,m=A_n,m+B_{n,m}$. Notice that $n$ in the index $_{n,m}$ represents the row and $m$ represents the column.
+For two matrices to be added, they must have an equal number of rows and columns. The sum of matrices $A$ and $B$ will be a matrix with the same number of rows and columns as $A$ or $B$. The sum of $A$ and $B$, denoted $A+B$ or $B+A$, is computed by adding the corresponding elements of $A$ and $B$: $`(A+B)_{n,m}=A_{n,m}+B_{n,m}`$. Notice that $n$ in the index $_{n,m}$ represents the row and $m$ represents the column.
 
 Here is a simple example with numbers:
 ```math
