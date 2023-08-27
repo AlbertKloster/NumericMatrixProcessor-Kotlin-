@@ -41,28 +41,23 @@ Take a look at this example of matrix multiplication:
 In this stage, you should write a program that can do all operations on matrices that you've learned.
 
 Write a program that does the following:
+- Prints a menu consisting of 4 options. The example shows what the menu should look like.
+- Reads the user's choice.
+- Reads all data (matrices, constants) needed to perform the chosen operation. The example shows the input format in each case.
+- Calculates the result and outputs it. The example shows how your output should look like.
+- Repeats all these steps.
 
-Prints a menu consisting of 4 options. The example shows what the menu should look like.
-
-Reads the user's choice.
-
-Reads all data (matrices, constants) needed to perform the chosen operation. The example shows the input format in each case.
-
-Calculates the result and outputs it. The example shows how your output should look like.
-
-Repeats all these steps.
-
-The program should keep repeating this until the "Exit" option is chosen.
+The program should keep repeating this until the `Exit` option is chosen.
 
 If some operation cannot be performed, output a warning message.
 
-Also, you should support floating-point numbers (Hint: Use Double type to mitigate loss of accuracy in complex calculations).
+Also, you should support floating-point numbers (<b>Hint:</b> Use Double type to mitigate loss of accuracy in complex calculations).
 
-Example
-The greater-than symbol followed by a space (> ) represents the user input. Note that it's not part of the input.
+## Example
+The greater-than symbol followed by a space (`> `) represents the user input. Note that it's not part of the input.
 
-Example 1: the user chooses the addition of matrices
-
+<b>Example 1:</b> <i>the user chooses the addition of matrices</i>
+```
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
@@ -91,8 +86,10 @@ Example 1: the user chooses the addition of matrices
 3. Multiply matrices
 0. Exit
    Your choice: >
-   Example 2: the user chooses the multiplication of a matrix by a constant
+```
 
+<b>Example 2:</b> <i>the user chooses the multiplication of a matrix by a constant</i>
+```
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
@@ -112,8 +109,10 @@ Example 1: the user chooses the addition of matrices
 3. Multiply matrices
 0. Exit
    Your choice: >
-   Example 3: the user chooses the multiplication of matrices
+```
 
+<b>Example 3:</b> <i>the user chooses the multiplication of matrices</i>
+```
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
@@ -139,8 +138,10 @@ Example 1: the user chooses the addition of matrices
 3. Multiply matrices
 0. Exit
    Your choice: >
-   Example 4: the user chooses the addition of matrices; the opertaion cannot be performed and they quit the program
+```
 
+<b>Example 4:</b> <i>the user chooses the addition of matrices; the opertaion cannot be performed and they quit the program</i>
+```
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
@@ -160,3 +161,4 @@ Example 1: the user chooses the addition of matrices
 3. Multiply matrices
 0. Exit
    Your choice: > 0
+```
