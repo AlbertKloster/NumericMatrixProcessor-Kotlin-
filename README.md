@@ -4,22 +4,11 @@ The next stage is the multiplication of matrices. This operation is a little mor
 
 Unlike with addition, the sizes of the matrices can be different: the only restriction is that the number of columns in the first matrix should equal the number of rows for the second matrix.
 
-The multiplication of $A$ matrix with $n$ rows and $m$ columns and $B$ matrix with $m$ rows and $k$ columns is $`C_{n,k}=A_{n,m}\times B_{m,k}`$
-.
+The multiplication of $A$ matrix with $n$ rows and $m$ columns and $B$ matrix with $m$ rows and $k$ columns is $`C_{n,k}=A_{n,m}\times B_{m,k}`$.
 
-The resulting matrix has n
-rows and k
-columns, where every element is a sum of the multiplication of m
-elements across the rows of matrix A
-by m
-elements down the columns of matrix B
-.
+The resulting matrix has $n$ rows and $k$ columns, where every element is a sum of the multiplication of $m$ elements across the rows of matrix $A$ by $m$ elements down the columns of matrix $B$.
 
-Another really important thing is that Ai,j×Bj,k
-is not equal to Bj,k×Ai,j
-. In fact, these are not even possible to multiply if k≠i.
-If k=i
-, the resulting matrices would still be different.
+Another really important thing is that $`A_{i,j} \times B_{j,k}`$ is not equal to $`B_{j,k} \times A_{i,j}$. In fact, these are not even possible to multiply if $k \neq i$. If $k=i$, the resulting matrices would still be different.
 
 Take a look at this example of matrix multiplication:
 
