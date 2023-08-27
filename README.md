@@ -14,7 +14,7 @@ $\begin{pmatrix}
 2 & 4 & 5 & 6 \\
 6 & 6 & 7 & 8 \\
 5 & 0 & 0 & 1 \\
-8 & 8 & 2 & 9 \end{pmatrix}
+8 & 8 & 2 & 9 \end{pmatrix}$
 
 Objectives
 In this stage, you should write a program that:
