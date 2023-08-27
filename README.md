@@ -15,6 +15,18 @@ Here is a simple example with numbers:
 6 & 6 & 7 & 8 \\
 5 & 0 & 0 & 1 \\
 8 & 8 & 2 & 9 \end{pmatrix}
++
+\begin{pmatrix}
+7 & 7 & 0 & 1 \\
+9 & 9 & 9 & 2 \\
+5 & 4 & 3 & 12 \\
+0 & 6 & 5 & 6 \end{pmatrix}
+=
+\begin{pmatrix}
+2+7 & 4+7 & 5+0 & 6+1 \\
+6+9 & 6+9 & 7+9 & 8+2 \\
+5+5 & 0+4 & 0+3 & 1+12 \\
+8+0 & 8+6 & 2+5 & 9+6 \end{pmatrix}
 ```
 
 
