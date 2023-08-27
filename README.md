@@ -4,7 +4,7 @@ The next stage is the multiplication of matrices. This operation is a little mor
 
 Unlike with addition, the sizes of the matrices can be different: the only restriction is that the number of columns in the first matrix should equal the number of rows for the second matrix.
 
-The multiplication of $A$ matrix with $n$ rows and $m$ columns and $B$ matrix with $m$ rows and $k$ columns is $`C_{n,k}=A_{n,m}\mult B_{m,k}`$
+The multiplication of $A$ matrix with $n$ rows and $m$ columns and $B$ matrix with $m$ rows and $k$ columns is $`C_{n,k}=A_{n,m}\times B_{m,k}`$
 .
 
 The resulting matrix has n
