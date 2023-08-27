@@ -8,13 +8,36 @@ The multiplication of $A$ matrix with $n$ rows and $m$ columns and $B$ matrix wi
 
 The resulting matrix has $n$ rows and $k$ columns, where every element is a sum of the multiplication of $m$ elements across the rows of matrix $A$ by $m$ elements down the columns of matrix $B$.
 
-Another really important thing is that $`A_{i,j} \times B_{j,k}`$ is not equal to $`B_{j,k} \times A_{i,j}$. In fact, these are not even possible to multiply if $k \neq i$. If $k=i$, the resulting matrices would still be different.
+Another really important thing is that $`A_{i,j} \times B_{j,k}`$ is not equal to $B_{j,k} \times A_{i,j}$. In fact, these are not even possible to multiply if $k \neq i$. If $k=i$, the resulting matrices would still be different.
 
 Take a look at this example of matrix multiplication:
+```math
+\begin{pmatrix}
+1 & 7 & 7 \\
+6 & 6 & 4 \\
+4 & 2 & 1
+\end{pmatrix}
+\times
+\begin{pmatrix}
+3 & 2 & 4 \\
+5 & 5 & 9 \\
+8 & 0 & 10
+end{pmatrix}
+=
+\begin{pmatrix}
+1 \times 3 + 7 \times 5 + 7 \times 8 & 1 \times 2 + 7 \times 5 + 7 \times 0 & 1 \times 4 + 7 \times 9 + 7 \times 10 \\
+6 \times 3 + 6 \times 5 + 4 \times 8 & 6 \times 2 + 6 \times 5 + 4 \times 0 & 6 \times 4 + 6 \times 9 + 4 \times 10 \\
+4 \times 3 + 2 \times 5 + 1 \times 8 & 4 \times 2 + 2 \times 5 + 1 \times 0 & 4 \times 4 + 2 \times 9 + 1 \times 10
+\end{pmatrix}
+=
+\begin{pmatrix}
+94 & 37 & 137 \\
+80 & 42 & 118 \\
+30 & 18 & 44
+\end{pmatrix}
+```
 
-⎛⎝⎜164762741⎞⎠⎟×⎛⎝⎜3582504910⎞⎠⎟=⎛⎝⎜1×3+7×5+7×86×3+6×5+4×84×3+2×5+1×81×2+7×5+7×06×2+6×5+4×04×2+2×5+1×01×4+7×9+7×106×4+6×9+4×104×4+2×9+1×10⎞⎠⎟=⎛⎝⎜94803037421813711844⎞⎠⎟
-
-Objectives
+## Objectives
 In this stage, you should write a program that can do all operations on matrices that you've learned.
 
 Write a program that does the following:
