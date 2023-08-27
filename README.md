@@ -62,30 +62,30 @@ The greater-than symbol followed by a space (`> `) represents the user input. No
 2. Multiply matrix by a constant
 3. Multiply matrices
 0. Exit
-   Your choice: > 1
-   Enter size of first matrix: > 4 5
-   Enter first matrix:
+Your choice: > 1
+Enter size of first matrix: > 4 5
+Enter first matrix:
 > 1 2 3 4 5
 > 3 2 3 2 1
 > 8 0 9 9 1
 > 1 3 4 5 6
-> Enter size of second matrix: > 4 5
-> Enter second matrix:
+Enter size of second matrix: > 4 5
+Enter second matrix:
 > 1 1 4 4 5
 > 4 4 5 7 8
 > 1 2 3 9 8
 > 1 0 0 0 1
-> The result is:
-> 2 3 7 8 10
-> 7 6 8 9 9
-> 9 2 12 18 9
-> 2 3 4 5 7
+The result is:
+2 3 7 8 10
+7 6 8 9 9
+9 2 12 18 9
+2 3 4 5 7
 
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
 0. Exit
-   Your choice: >
+Your choice: >
 ```
 
 <b>Example 2:</b> <i>the user chooses the multiplication of a matrix by a constant</i>
@@ -94,21 +94,21 @@ The greater-than symbol followed by a space (`> `) represents the user input. No
 2. Multiply matrix by a constant
 3. Multiply matrices
 0. Exit
-   Your choice: > 2
-   Enter size of matrix: > 2 2
-   Enter matrix:
+Your choice: > 2
+Enter size of matrix: > 2 2
+Enter matrix:
 > 1.5 7.0
 > 6.0 5.0
-> Enter constant: > 0.5
-> The result is:
-> 0.75 3.5
-> 3.0 2.5
+Enter constant: > 0.5
+The result is:
+0.75 3.5
+3.0 2.5
 
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
 0. Exit
-   Your choice: >
+Your choice: >
 ```
 
 <b>Example 3:</b> <i>the user chooses the multiplication of matrices</i>
@@ -117,27 +117,27 @@ The greater-than symbol followed by a space (`> `) represents the user input. No
 2. Multiply matrix by a constant
 3. Multiply matrices
 0. Exit
-   Your choice: > 3
-   Enter size of first matrix: > 3 3
-   Enter first matrix:
+Your choice: > 3
+Enter size of first matrix: > 3 3
+Enter first matrix:
 > 1 7 7
 > 6 6 4
 > 4 2 1
-> Enter size of second matrix: > 3 3
-> Enter second matrix:
+Enter size of second matrix: > 3 3
+Enter second matrix:
 > 3 2 4
 > 5 5 9
 > 8 0 10
-> The result is:
-> 94 37 137
-> 80 42 118
-> 30 18 44
+The result is:
+94 37 137
+80 42 118
+30 18 44
 
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
 0. Exit
-   Your choice: >
+Your choice: >
 ```
 
 <b>Example 4:</b> <i>the user chooses the addition of matrices; the opertaion cannot be performed and they quit the program</i>
@@ -146,19 +146,19 @@ The greater-than symbol followed by a space (`> `) represents the user input. No
 2. Multiply matrix by a constant
 3. Multiply matrices
 0. Exit
-   Your choice: > 1
-   Enter size of first matrix: > 2 2
-   Enter first matrix:
+Your choice: > 1
+Enter size of first matrix: > 2 2
+Enter first matrix:
 > 1 2
 > 3 2
-> Enter size of second matrix: > 1 1
-> Enter second matrix:
+Enter size of second matrix: > 1 1
+Enter second matrix:
 > 1
-> The operation cannot be performed.
+The operation cannot be performed.
 
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
 0. Exit
-   Your choice: > 0
+Your choice: > 0
 ```
