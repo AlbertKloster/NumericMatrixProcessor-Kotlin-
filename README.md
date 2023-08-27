@@ -22,7 +22,7 @@ Take a look at this example of matrix multiplication:
 3 & 2 & 4 \\
 5 & 5 & 9 \\
 8 & 0 & 10
-end{pmatrix}
+\end{pmatrix}
 =
 \begin{pmatrix}
 1 \times 3 + 7 \times 5 + 7 \times 8 & 1 \times 2 + 7 \times 5 + 7 \times 0 & 1 \times 4 + 7 \times 9 + 7 \times 10 \\
