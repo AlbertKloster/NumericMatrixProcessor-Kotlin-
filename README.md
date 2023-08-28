@@ -34,7 +34,7 @@ Transposition along the main diagonal is shown below:
 3 & 3 & 3 & 3 \\
 4 & 4 & 4 & 4
 \end{pmatrix}^T
-=
+\to
 \begin{pmatrix}
 1 & 2 & 3 & 4 \\
 1 & 2 & 3 & 4 \\
@@ -50,7 +50,7 @@ Here is what transposition along the side diagonal looks like:
 3 & 3 & 3 & -3 \\
 4 & 4 & 4 & -4
 \end{pmatrix}^T
-=
+\to
 \begin{pmatrix}
 -4 & -3 & -2 & -1 \\
 4 & 3 & 2 & 1 \\
