@@ -32,8 +32,15 @@ Transposition along the main diagonal is shown below:
 1 & 1 & 1 & 1 \\
 2 & 2 & 2 & 2 \\
 3 & 3 & 3 & 3 \\
-4 & 4 & 4 & 4 \\
+4 & 4 & 4 & 4
 \end{pmatrix}^T
+=
+\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+1 & 2 & 3 & 4 \\
+1 & 2 & 3 & 4 \\
+1 & 2 & 3 & 4
+\end{pmatrix}
 ```
 Here is what transposition along the side diagonal looks like:
 
