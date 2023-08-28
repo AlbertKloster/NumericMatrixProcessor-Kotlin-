@@ -5,7 +5,7 @@ In this stage, you should implement matrix transposition. Matrix transposition i
 The <b>main diagonal</b> of a matrix is a line with elements from $a_{1,1}$ to $a_{n,n}$:
 ```math
 \begin{pmatrix}
-<b>a_{1,1}</b> & a_{1,2} \\
+\textcolor{red}{a_{1,1}} & a_{1,2} \\
 a_{2,1} & a_{2,2}
 \end{pmatrix}
 ```
