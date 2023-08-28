@@ -15,12 +15,22 @@ a_21 & a_22
 ```
 Now let's move on to the minor and the cofactor of a matrix.
 
-$Minor_(i,j)$ of a matrix is the determinant of the submatrix we get from the remaining elements after removing the $i$ row and $j$ column from this matrix.
+$Minor_{(i,j)}$ of a matrix is the determinant of the submatrix we get from the remaining elements after removing the $i$ row and $j$ column from this matrix.
 
-Below is an example of $Minor_(2,2)$ for matrix $A_{3 \times 3}$
-:
-
-M2,2⎛⎝⎜a1,1a2,1a3,1a1,2a2,2a3,2a1,3a2,3a3,3⎞⎠⎟=det(a1,1a3,1a1,3a3,3)
+Below is an example of $Minor_{(2,2)}$ for matrix $A_{3 \times 3}$:
+```math
+M_{2,2}
+\begin{pmatrix}
+a_{1,1} & \textcolor{red}{a_{1,2}} & a_{1,3} \\
+\textcolor{red}{a_{2,1}} & \textcolor{red}{a_{2,2}} & \textcolor{red}{a_{2,3}} \\
+a_{3,1} & \textcolor{red}{a_{3,2}} & a_{3,3}
+\end{pmatrix}
+= det
+\begin{pmatrix}
+a_{1,1} & a_{1,3} \\
+a_{3,1} & a_{3,3}
+\end{pmatrix}
+```
 
 Cofactor(i,j)
 of a matrix is the corresponding Minor(i,j)
