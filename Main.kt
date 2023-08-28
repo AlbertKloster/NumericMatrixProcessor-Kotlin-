@@ -7,6 +7,7 @@ enum class Option(val string: String) {
     MULTIPLY_MATRIX_BY_CONSTANT("2"),
     MULTIPLY_MATRICES("3"),
     TRANSPOSE_MATRIX("4"),
+    CALCULATE_DETERMINANT("5"),
     EXIT("0");
 
     companion object {
@@ -29,9 +30,19 @@ fun main() {
             Option.MULTIPLY_MATRIX_BY_CONSTANT -> multiplyMatrixByConstant()
             Option.MULTIPLY_MATRICES -> multiplyMatrices()
             Option.TRANSPOSE_MATRIX -> transposeMatrix()
+            Option.CALCULATE_DETERMINANT -> calculateDeterminant()
             Option.EXIT -> exit = true
         }
     }
+}
+
+private fun calculateDeterminant() {
+    print("Enter matrix size: ")
+    val numRows = getNumRows()
+    println("Enter matrix:")
+    val matrix = getMatrix(numRows)
+    val result = matrix.calculateDeterminant()
+    println("The result is:\n$result")
 }
 
 private fun addMatrices() {
@@ -119,11 +130,11 @@ private fun getMatrix(numRows: Int) = List(numRows) { readln().split(" ").map { 
 
 private fun printMenu() {
     println("""
-        
         1. Add matrices
         2. Multiply matrix by a constant
         3. Multiply matrices
         4. Transpose matrix
+        5. Calculate a determinant
         0. Exit
     """.trimIndent())
 }
@@ -211,3 +222,35 @@ private fun Matrix.transposeHorizontal(): Matrix {
     return result
 }
 
+private fun Matrix.calculateDeterminant(): Double {
+    val numRows = this.size
+    val numCols = this[0].size
+    if (numRows != numCols) throw RuntimeException("The operation cannot be performed.")
+
+    if (numRows == 1) return this.first().first()
+
+    var determinant = 0.0
+    for (col in 0 until numCols) {
+        determinant += this[0][col] * getCofactor(this, col) * if (col % 2 == 0) 1 else -1
+    }
+
+    return determinant
+}
+
+private fun getCofactor(matrix: Matrix, col: Int): Double {
+    val subMatrix = mutableListOf<MutableList<Double>>()
+
+    for (i in matrix.indices) {
+        if (i != 0) {
+            val subRow = mutableListOf<Double>()
+            for (j in matrix[i].indices) {
+                if (j != col) {
+                    subRow.add(matrix[i][j])
+                }
+            }
+            subMatrix.add(subRow)
+        }
+    }
+
+    return subMatrix.calculateDeterminant()
+}
