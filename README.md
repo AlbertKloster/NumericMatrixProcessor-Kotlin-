@@ -5,15 +5,21 @@ In this stage, you should implement matrix transposition. Matrix transposition i
 The <b>main diagonal</b> of a matrix is a line with elements from $a_{1,1}$ to $a_{n,n}$:
 ```math
 \begin{pmatrix}
-\textcolor{red}{a_{1,1}} & a_{1,2} \\
-a_{2,1} & a_{2,2}
+\textcolor{red}{a_{1,1}} & a_{1,2} & a_{1,3} & a_{1,4} \\
+a_{2,1} & \textcolor{red}{a_{2,2}} & a_{2,3} & a_{2,4} \\
+a_{3,1} & a_{3,2} & \textcolor{red}{a_{3,3}} & a_{3,4} \\
+a_{4,1} & a_{4,2} & a_{4,3} & \textcolor{red}{a_{4,4}}
 \end{pmatrix}
 ```
-
-The side diagonal of a matrix is a line from a1,n
-to an,1
-:
-
+The <b>side diagonal</b> of a matrix is a line from $a_{1,n}$ to $a_{n,1}$:
+```math
+\begin{pmatrix}
+a_{1,1} & a_{1,2} & a_{1,3} & \textcolor{red}{a_{1,4}} \\
+a_{2,1} & a_{2,2} & \textcolor{red}{a_{2,3}} & a_{2,4} \\
+a_{3,1} & \textcolor{red}{a_{3,2}} & a_{3,3} & a_{3,4} \\
+\textcolor{red}{a_{4,1}} & a_{4,2} & a_{4,3} & a_{4,4}
+\end{pmatrix}
+```
 In math, there is only one type of matrix transposition: transposition along the main diagonal. In this stage, you should implement the other three types of transposition to practice your list skills. These four types are:
 
 transposition along the main diagonal
