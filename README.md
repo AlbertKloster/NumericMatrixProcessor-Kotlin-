@@ -2,7 +2,7 @@
 ## Description
 In this stage, you should find the inverse of a matrix.
 
-The inverse matrix $A^−1$ is the matrix whose product with the original matrix $A$ is equal to the identity matrix.
+The inverse matrix $A^{−1}$ is the matrix whose product with the original matrix $A$ is equal to the identity matrix.
 ```math
 A \times A^{−1}=A^{−1} \times A=I
 ```
