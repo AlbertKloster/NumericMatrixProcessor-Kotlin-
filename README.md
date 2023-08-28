@@ -43,7 +43,21 @@ Transposition along the main diagonal is shown below:
 \end{pmatrix}
 ```
 Here is what transposition along the side diagonal looks like:
-
+```math
+\begin{pmatrix}
+1 & 1 & 1 & -1 \\
+2 & 2 & 2 & -2 \\
+3 & 3 & 3 & -3 \\
+4 & 4 & 4 & -4
+\end{pmatrix}^T
+=
+\begin{pmatrix}
+-4 & -3 & -2 & -1 \\
+4 & 3 & 2 & 1 \\
+4 & 3 & 2 & 1 \\
+4 & 3 & 2 & 1
+\end{pmatrix}
+```
 The matrix below is transposed along the vertical line:
 
 Finally, here is transposition along the horizontal line:
