@@ -8,6 +8,7 @@ enum class Option(val string: String) {
     MULTIPLY_MATRICES("3"),
     TRANSPOSE_MATRIX("4"),
     CALCULATE_DETERMINANT("5"),
+    INVERSE_MATRIX("6"),
     EXIT("0");
 
     companion object {
@@ -31,8 +32,22 @@ fun main() {
             Option.MULTIPLY_MATRICES -> multiplyMatrices()
             Option.TRANSPOSE_MATRIX -> transposeMatrix()
             Option.CALCULATE_DETERMINANT -> calculateDeterminant()
+            Option.INVERSE_MATRIX -> inverseMatrix()
             Option.EXIT -> exit = true
         }
+    }
+}
+
+private fun inverseMatrix() {
+    print("Enter matrix size: ")
+    val numRows = getNumRows()
+    println("Enter matrix:")
+    val matrix = getMatrix(numRows)
+    try {
+        val result = matrix.inverse()
+        printResult(result)
+    } catch (e: RuntimeException) {
+        println(e.message)
     }
 }
 
@@ -69,7 +84,7 @@ private fun multiplyMatrixByConstant() {
     println("Enter matrix:")
     val matrix = getMatrix(numRows)
     print("Enter constant: ")
-    val constant = readln().toInt()
+    val constant = readln().toDouble()
     val result = matrix.multiply(constant)
     printResult(result)
 }
@@ -130,11 +145,13 @@ private fun getMatrix(numRows: Int) = List(numRows) { readln().split(" ").map { 
 
 private fun printMenu() {
     println("""
+        
         1. Add matrices
         2. Multiply matrix by a constant
         3. Multiply matrices
         4. Transpose matrix
         5. Calculate a determinant
+        6. Inverse matrix
         0. Exit
     """.trimIndent())
 }
@@ -150,11 +167,11 @@ private fun Matrix.add(other: Matrix): Matrix {
     return this.zip(other) { row1, row2 -> row1.zip(row2) { e1, e2 -> e1 + e2 } }
 }
 
-private fun Matrix.multiply(number: Int) = this.map { row -> row.map { it * number } }
+private fun Matrix.multiply(number: Double) = this.map { row -> row.map { it * number } }
 
 private fun Matrix.multiply(other: Matrix): Matrix {
     val numRowsA = this.size
-    val numColsA = this[0].size
+    val numColsA = this.first().size
     val numRowsB = other.size
     val numColsB = other[0].size
 
@@ -172,7 +189,7 @@ private fun Matrix.multiply(other: Matrix): Matrix {
 
 private fun Matrix.transposeMain(): Matrix {
     if (isEmpty()) return emptyList()
-    val numRows = this[0].size
+    val numRows = this.first().size
     val numCols = size
     val result = MutableList(numRows) { MutableList(numCols) { 0.0 } }
     for (i in 0 until numRows) {
@@ -185,7 +202,7 @@ private fun Matrix.transposeMain(): Matrix {
 
 private fun Matrix.transposeSide(): Matrix {
     if (isEmpty()) return emptyList()
-    val numRows = this[0].size
+    val numRows = this.first().size
     val numCols = size
     val result = MutableList(numRows) { MutableList(numCols) { 0.0 } }
     for (i in 0 until numRows) {
@@ -198,7 +215,7 @@ private fun Matrix.transposeSide(): Matrix {
 
 private fun Matrix.transposeVertical(): Matrix {
     if (isEmpty()) return emptyList()
-    val numRows = this[0].size
+    val numRows = this.first().size
     val numCols = size
     val result = MutableList(numRows) { MutableList(numCols) { 0.0 } }
     for (i in 0 until numRows) {
@@ -211,7 +228,7 @@ private fun Matrix.transposeVertical(): Matrix {
 
 private fun Matrix.transposeHorizontal(): Matrix {
     if (isEmpty()) return emptyList()
-    val numRows = this[0].size
+    val numRows = this.first().size
     val numCols = size
     val result = MutableList(numRows) { MutableList(numCols) { 0.0 } }
     for (i in 0 until numRows) {
@@ -224,28 +241,28 @@ private fun Matrix.transposeHorizontal(): Matrix {
 
 private fun Matrix.calculateDeterminant(): Double {
     val numRows = this.size
-    val numCols = this[0].size
+    val numCols = this.first().size
     if (numRows != numCols) throw RuntimeException("The operation cannot be performed.")
 
     if (numRows == 1) return this.first().first()
 
     var determinant = 0.0
     for (col in 0 until numCols) {
-        determinant += this[0][col] * getCofactor(this, col) * if (col % 2 == 0) 1 else -1
+        determinant += this[0][col] * getCofactor(this, 0, col)
     }
 
     return determinant
 }
 
-private fun getCofactor(matrix: Matrix, col: Int): Double {
+fun getCofactor(matrix: List<List<Double>>, row: Int, col: Int): Double {
     val subMatrix = mutableListOf<MutableList<Double>>()
 
     for (i in matrix.indices) {
-        if (i != 0) {
+        if (i != row) {
             val subRow = mutableListOf<Double>()
             for (j in matrix[i].indices) {
                 if (j != col) {
-                    subRow.add(matrix[i][j])
+                    subRow.add((matrix[i][j] * if (i % 2 == 0) 1 else -1) * if (j % 2 == 0) 1 else -1)
                 }
             }
             subMatrix.add(subRow)
@@ -253,4 +270,25 @@ private fun getCofactor(matrix: Matrix, col: Int): Double {
     }
 
     return subMatrix.calculateDeterminant()
+}
+
+private fun Matrix.inverse(): Matrix {
+    val numRows = this.size
+    val numCols = this.first().size
+    if (numRows != numCols) throw RuntimeException("The operation cannot be performed.")
+
+    val determinant = this.calculateDeterminant()
+
+    if (determinant == 0.0) throw RuntimeException("This matrix doesn't have an inverse.")
+
+    val cofactorMatrix = mutableListOf<List<Double>>()
+    for (row in 0 until numRows) {
+        val cofactorRow = mutableListOf<Double>()
+        for (col in 0 until numCols) {
+            cofactorRow.add(getCofactor(this, row, col))
+        }
+        cofactorMatrix.add(cofactorRow)
+    }
+
+    return cofactorMatrix.transposeMain().multiply(1 / determinant)
 }

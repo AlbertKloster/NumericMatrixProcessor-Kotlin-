@@ -1,96 +1,95 @@
-# Stage 5/6: Determined!
+# Stage 6/6: Inverse matrix
 ## Description
-In this stage, you should write a program that calculates a <b>determinant</b> of a matrix. You can check out some <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">videos about linear algebra</a> to understand the essence of the determinant and why it is important. To see how to calculate the determinant of any square matrix, watch a video about <a href="https://www.youtube.com/watch?v=KMKd993vG9Q">minors and cofactors</a> and <a href="https://www.youtube.com/watch?v=H9BWRYJNIv4">computing the nxn determinant</a>. Also, here's <a href="https://www.mathsisfun.com/algebra/matrix-determinant.html">nice graphic explanation</a> on minors and cofactors.
+In this stage, you should find the inverse of a matrix.
 
-A <b>determinant</b> is a single number that can be computed from the elements of a square matrix. There is a classical way to find the determinant of a matrix with an order $<3$.
-
-A determinant of a 2-order matrix is equal to the difference between the product of elements on the main diagonal and the product of elements on the side diagonal:
+The inverse matrix $A^−1$ is the matrix whose product with the original matrix $A$ is equal to the identity matrix.
 ```math
-det
-\begin{pmatrix}
-a_11 & a_12 \\
-a_21 & a_22
-\end{pmatrix}
-= a_11 \times a_22 - a_12 \times a_21
+A \times A^{−1}=A^{−1} \times A=I
 ```
-Now let's move on to the minor and the cofactor of a matrix.
 
-$Minor_{(i,j)}$ of a matrix is the determinant of the submatrix we get from the remaining elements after removing the $i$ row and $j$ column from this matrix.
+Watch a video about <a href="https://www.youtube.com/watch?v=AMLUikdDQGk">the inverse of a matrix</a> to get the basic idea. To get a deeper understanding, check out the <a href="https://www.youtube.com/watch?v=uQhTuRlWMxw&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=7">3Blue1Brown channel</a>.
 
-Below is an example of $Minor_{(2,2)}$ for matrix $A_{3 \times 3}$:
+The identity matrix is a matrix where all elements of the main diagonal are ones, and other elements are zeros. Here is an example of a $4,4$ identity matrix:
 ```math
-M_{2,2}
+I_{4,4}=
 \begin{pmatrix}
-a_{1,1} & \textcolor{red}{a_{1,2}} & a_{1,3} \\
-\textcolor{red}{a_{2,1}} & \textcolor{red}{a_{2,2}} & \textcolor{red}{a_{2,3}} \\
-a_{3,1} & \textcolor{red}{a_{3,2}} & a_{3,3}
-\end{pmatrix}
-= det
-\begin{pmatrix}
-a_{1,1} & a_{1,3} \\
-a_{3,1} & a_{3,3}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
 \end{pmatrix}
 ```
-$Cofactor_{(i,j)}$ of a matrix is the corresponding $Minor_{(i,j)}$ multiplied by $(−1)^{i+j}$. Notice that the cofactor is always preceded by a positive $+$ or negative $−$ sign.
 
-We often need to find the determinant of a matrix of the order greater than $2$. In this case, we have to use expansion by rows or columns where the determinant is equal to a sum of a single row or a single column multiplied by the cofactors of the elements in the corresponding row or column. To do this, you should use a recursive method.
-
-Below is an example of computing the determinant of a matrix of order $4$ by first-row expansion, where $c$ stands for the $Cofactor$:
+The inverse of a matrix can be found using this formula:
 ```math
-det
-\begin{pmatrix}
-a_{1,1} & a_{1,2} & a_{1,3} & a_{1,4} \\
-a_{2,1} & a_{2,2} & a_{2,3} & a_{2,4} \\
-a_{3,1} & a_{3,2} & a_{3,3} & a_{3,4} \\
-a_{4,1} & a_{4,2} & a_{4,3} & a_{4,4}
-\end{pmatrix}
-= M_{1,1} \times c_{1,1} + M_{1,2} \times c_{1,2} + M_{1,3} \times c_{1,3} + M_{1,4} \times c_{1,4}
+A^{-1}= \frac{1}{det(A)} \times C^T
 ```
-### Objectives
-In this stage, your program should support calculating the determinant of a matrix. Refer to the example to see how it should be implemented.
+As you can see, it contains a lot of operations you implemented in the previous stages: finding cofactors of all the elements of the matrix, transposition of the matrix, finding the determinant of a matrix, and multiplication of a matrix by a constant.
+
+$det(A)$ is the determinant of matrix $A$, and $C^T$ is the matrix consisting of cofactors of all elements of the matrix $A$ transposed along the main diagonal. The inverse matrix can’t be found if $det(A)$ equals zero. You can look up a <a href="https://www.youtube.com/watch?v=xfhzwNkMNg4">calculation example</a>.
+
+## Objectives
+In this stage, your program should support finding the inverse of a matrix. Refer to the example to see how it should be implemented.
+
+Note that in some cases the inverse of a matrix does not exist. In such cases, your program should output a warning message.
+
+## Additional improvements
+Although it's not required in this stage and we won't check, you can implement a method that prints a matrix in a readable way so that every column is correctly aligned and all elements are rounded to a fixed number of digits.
 
 ## Example
 The greater-than symbol followed by a space (`> `) represents the user input. Note that it's not part of the input.
 
-<b>Example 1:</b> <i>the user chooses to calculate determinants of two matrices and quits the program after the operation</i>
+<b>Example 1:</b> <i>the user chooses to calculate the inverse of a matrix</i>
 ```
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
 4. Transpose matrix
 5. Calculate a determinant
+6. Inverse matrix
 0. Exit
-Your choice: > 5
+Your choice: > 6
 Enter matrix size: > 3 3
 Enter matrix:
-> 1 7 7
-> 6 6 4
-> 4 2 1
+> 2 -1 0
+> 0 1 2
+> 1 1 0
 The result is:
--16
+ 0.33   0  0.33
+-0.33   0  0.66
+ 0.16 0.5 -0.33
 
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
 4. Transpose matrix
 5. Calculate a determinant
+6. Inverse matrix
 0. Exit
-Your choice: > 5
-Enter matrix size: > 5 5
+Your choice: >
+```
+<b>Example 2:</b> <i>the user chooses to calculate the inverse of a matrix; the matrix doesn't have an inverse</i>
+```
+1. Add matrices
+2. Multiply matrix by a constant
+3. Multiply matrices
+4. Transpose matrix
+5. Calculate a determinant
+6. Inverse matrix
+0. Exit
+Your choice: > 6
+Enter matrix size: > 2 2
 Enter matrix:
-> 1 2 3 4 5
-> 4 5 6 4 3
-> 0 0 0 1 5
-> 1 3 9 8 7
-> 5 8 4 7 11
-The result is:
-191
+> 2 1
+> 4 2
+This matrix doesn't have an inverse.
 
 1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
 4. Transpose matrix
 5. Calculate a determinant
+6. Inverse matrix
 0. Exit
 Your choice: > 0
 ```
