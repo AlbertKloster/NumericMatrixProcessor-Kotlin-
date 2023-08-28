@@ -21,13 +21,20 @@ a_{3,1} & \textcolor{red}{a_{3,2}} & a_{3,3} & a_{3,4} \\
 \end{pmatrix}
 ```
 In math, there is only one type of matrix transposition: transposition along the main diagonal. In this stage, you should implement the other three types of transposition to practice your list skills. These four types are:
+- transposition along the main diagonal
+- transposition along the side diagonal
+- transposition along the vertical line
+- transposition along the horizontal line
 
-transposition along the main diagonal
-transposition along the side diagonal
-transposition along the vertical line
-transposition along the horizontal line
 Transposition along the main diagonal is shown below:
-
+```math
+\begin{pmatrix}
+1 & 1 & 1 & 1 \\
+2 & 2 & 2 & 2 \\
+3 & 3 & 3 & 3 \\
+4 & 4 & 4 & 4 \\
+\end{pmatrix}^T
+```
 Here is what transposition along the side diagonal looks like:
 
 The matrix below is transposed along the vertical line:
