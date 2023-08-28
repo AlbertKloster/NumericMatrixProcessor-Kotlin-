@@ -15,11 +15,9 @@ a_21 & a_22
 ```
 Now let's move on to the minor and the cofactor of a matrix.
 
-Minor(i,j)
-of a matrix is the determinant of the submatrix we get from the remaining elements after removing the i row and j column from this matrix.
+$Minor_(i,j)$ of a matrix is the determinant of the submatrix we get from the remaining elements after removing the $i$ row and $j$ column from this matrix.
 
-Below is an example of Minor(2,2)
-for matrix A3×3
+Below is an example of $Minor_(2,2)$ for matrix $A_{3 \times 3}$
 :
 
 M2,2⎛⎝⎜a1,1a2,1a3,1a1,2a2,2a3,2a1,3a2,3a3,3⎞⎠⎟=det(a1,1a3,1a1,3a3,3)
