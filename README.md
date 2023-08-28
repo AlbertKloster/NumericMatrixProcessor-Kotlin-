@@ -7,10 +7,10 @@ A <b>determinant</b> is a single number that can be computed from the elements o
 A determinant of a 2-order matrix is equal to the difference between the product of elements on the main diagonal and the product of elements on the side diagonal:
 ```math
 det
-/begin{pmatrix}
+\begin{pmatrix}
 a_11 & a_12 \\
 a_21 & a_22
-/end{pmatrix}
+\end{pmatrix}
 = a_11 \times a_22 - a_12 \times a_21
 ```
 Now let's move on to the minor and the cofactor of a matrix.
